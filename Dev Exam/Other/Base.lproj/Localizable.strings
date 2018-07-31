@@ -25,3 +25,6 @@
 
 /* No comment provided by engineer. */
 "SUCCESS_TITLE" = "Congratulations!";
+
+/* No comment provided by engineer. */
+"MISSING_FIELDS" = "Some fields are missing.";

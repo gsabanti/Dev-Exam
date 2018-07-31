@@ -25,3 +25,6 @@
 
 /* No comment provided by engineer. */
 "SUCCESS_TITLE" = "Поздравляем!";
+
+/* No comment provided by engineer. */
+"MISSING_FIELDS" = "Не все поля заполнены.";

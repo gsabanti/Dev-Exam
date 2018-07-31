@@ -23,16 +23,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Usf-sn-AmY">
-                                        <rect key="frame" x="40" y="242.5" width="295" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hpD-jQ-mBJ"/>
-                                        </constraints>
+                                        <rect key="frame" x="40" y="233.5" width="295" height="21"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3F-MV-xcO">
-                                        <rect key="frame" x="127.5" y="332.5" width="120" height="44"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3F-MV-xcO">
+                                        <rect key="frame" x="127.5" y="314.5" width="120" height="44"/>
                                         <color key="backgroundColor" red="0.25490196078431371" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="i4L-WQ-h5X"/>
@@ -42,6 +39,11 @@
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" red="0.23137254900000001" green="0.72941176470000002" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="authWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d04-tA-sVq"/>
                                         </connections>
@@ -64,24 +66,21 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-AF-jS4">
-                                <rect key="frame" x="40" y="212.5" width="295" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="y8V-F6-Vft"/>
-                                </constraints>
+                                <rect key="frame" x="40" y="212.5" width="295" height="21"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NyT-AF-jS4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0CH-yn-EAB"/>
+                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="20w-Za-LcV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DqJ-BF-lBP" secondAttribute="trailing" id="3Ep-lu-icq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q6k-rU-XbA" secondAttribute="trailing" constant="90" id="4qf-vz-X5r"/>
-                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6wM-BJ-C2l"/>
-                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Ax-29-LLu"/>
+                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8kM-VR-HxH"/>
                             <constraint firstItem="NyT-AF-jS4" firstAttribute="top" secondItem="q6k-rU-XbA" secondAttribute="bottom" constant="90" id="9OZ-Fz-va2"/>
-                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rdb-ws-aUa"/>
-                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="TGG-hL-o7Z"/>
+                            <constraint firstItem="DqJ-BF-lBP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Huv-ge-hK0"/>
                             <constraint firstItem="Usf-sn-AmY" firstAttribute="top" secondItem="NyT-AF-jS4" secondAttribute="bottom" constant="20" id="dVT-EE-4Nw"/>
                             <constraint firstItem="q6k-rU-XbA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="fd3-a2-AfG"/>
                             <constraint firstItem="q6k-rU-XbA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="k8D-lb-9TQ"/>
@@ -91,8 +90,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Huv-ge-hK0" id="6jF-9x-Ol9"/>
                         <outlet property="passwordTextField" destination="Usf-sn-AmY" id="r9R-pF-yi3"/>
                         <outlet property="phoneTextField" destination="NyT-AF-jS4" id="E8O-xH-RmN"/>
+                        <outlet property="scrollview" destination="DqJ-BF-lBP" id="LVp-GX-15M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -222,7 +223,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Iz-FX-Ta8">
                                 <rect key="frame" x="16" y="276.5" width="343" height="374.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

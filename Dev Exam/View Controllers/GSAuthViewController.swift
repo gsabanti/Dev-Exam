@@ -13,7 +13,9 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
     var listener: MaskedTextFieldDelegate?
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollview: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -36,11 +38,16 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
                     self?.listener?.delegate = self
                     self?.phoneTextField.delegate = self?.listener
                     self?.phoneTextField.isEnabled = true
+                    self?.phoneTextField.placeholder = mask
                 }
             }) { (failureString) in
                 self.showFailureAlert(message: failureString)
             }
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(GSAuthViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GSAuthViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)    
+
     }
 
     func textField(_ textField: UITextField, didFillMandatoryCharacters complete: Bool, didExtractValue value: String) {
@@ -54,6 +61,7 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
 
     @IBAction func auth(sender: UIButton?)
     {
+        guard !self.phoneTextField.text!.isEmpty && !self.passwordTextField.text!.isEmpty else { self.showFailureAlert(message: NSLocalizedString("MISSING_FIELDS", comment: "")); return }
         AuthManager.authorize(phone: self.phoneTextField.text ?? "", password: self.passwordTextField.text ?? "", success: { 
             DispatchQueue.main.async {
                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "feed") as! GSFeedTableViewController
@@ -66,5 +74,18 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
             }
         }
     }
+}
+
+//Открытие/Закрытие клавиатуры
+extension GSAuthViewController
+{
+    @objc func keyboardWillShow(notification: NSNotification) {        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height
+        }        
+    }
     
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.bottomConstraint.constant = 0
+    }
 }
