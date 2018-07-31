@@ -10,6 +10,7 @@
 ✓Swift 4  
 ✓Локализация (Английский и Русский языки)  
 ✓Pull-to-refresh  
+✓Keychain  
 ✓Autolayout  
   
 Не выполненные условия:  
