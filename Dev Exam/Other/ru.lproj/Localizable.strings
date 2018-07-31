@@ -1,0 +1,27 @@
+
+/* No comment provided by engineer. */
+"BASIC_FAILURE" = "Не удалось совершить запрос.";
+
+/* No comment provided by engineer. */
+"DETAILED_TITLE" = "Детализация";
+
+/* No comment provided by engineer. */
+"ERROR_CANCEL" = "ОК";
+
+/* No comment provided by engineer. */
+"ERROR_OCCURRED" = "Произошла ошибка";
+
+/* No comment provided by engineer. */
+"FAILED_AUTH_FAILURE" = "Пользователь не найден.";
+
+/* No comment provided by engineer. */
+"NO_PARAMS_FAILURE" = "Не заданы параметры запроса";
+
+/* No comment provided by engineer. */
+"SUCCESS_CANCEL" = "ОК";
+
+/* No comment provided by engineer. */
+"SUCCESS_MESSAGE" = "Все прошло успешно";
+
+/* No comment provided by engineer. */
+"SUCCESS_TITLE" = "Поздравляем!";

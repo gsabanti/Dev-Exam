@@ -1,0 +1,27 @@
+
+/* No comment provided by engineer. */
+"BASIC_FAILURE" = "Couldn't complete the request";
+
+/* No comment provided by engineer. */
+"DETAILED_TITLE" = "Detalization";
+
+/* No comment provided by engineer. */
+"ERROR_CANCEL" = "OK";
+
+/* No comment provided by engineer. */
+"ERROR_OCCURRED" = "Error occurred";
+
+/* No comment provided by engineer. */
+"FAILED_AUTH_FAILURE" = "User not found";
+
+/* No comment provided by engineer. */
+"NO_PARAMS_FAILURE" = "No request parameters set";
+
+/* No comment provided by engineer. */
+"SUCCESS_CANCEL" = "OK";
+
+/* No comment provided by engineer. */
+"SUCCESS_MESSAGE" = "Everything works fine";
+
+/* No comment provided by engineer. */
+"SUCCESS_TITLE" = "Congratulations!";

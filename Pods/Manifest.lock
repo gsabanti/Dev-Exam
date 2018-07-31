@@ -1,0 +1,40 @@
+PODS:
+  - InputMask (3.4.1)
+  - KeychainAccess (3.1.1)
+  - Realm (3.7.4):
+    - Realm/Headers (= 3.7.4)
+  - Realm/Headers (3.7.4)
+  - RealmSwift (3.7.4):
+    - Realm (= 3.7.4)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - InputMask
+  - KeychainAccess
+  - RealmSwift
+  - SDWebImage (~> 4.0)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - InputMask
+    - KeychainAccess
+    - Realm
+    - RealmSwift
+    - SDWebImage
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  InputMask: 2c7d3faddbc724a8356a6ea269d60d9d6d7d2423
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
+  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: ae81f0d63697df38ebd99790bf05741736ba4e22
+
+COCOAPODS: 1.5.2

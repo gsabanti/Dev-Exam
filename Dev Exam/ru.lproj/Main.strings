@@ -1,0 +1,33 @@
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "7Iz-FX-Ta8"; */
+"7Iz-FX-Ta8.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "J3F-MV-xcO"; */
+"J3F-MV-xcO.normalTitle" = "Войти";
+
+/* Class = "UITextField"; placeholder = "Phone number"; ObjectID = "NyT-AF-jS4"; */
+"NyT-AF-jS4.placeholder" = "Номер телефона";
+
+/* Class = "UISegmentedControl"; Oku-l1-ocE.segmentTitles[0] = "Server Sort"; ObjectID = "Oku-l1-ocE"; */
+"Oku-l1-ocE.segmentTitles[0]" = "Серверная сортировка";
+
+/* Class = "UISegmentedControl"; Oku-l1-ocE.segmentTitles[1] = "By date sort"; ObjectID = "Oku-l1-ocE"; */
+"Oku-l1-ocE.segmentTitles[1]" = "По дате";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Usf-sn-AmY"; */
+"Usf-sn-AmY.placeholder" = "Пароль";
+
+/* Class = "UINavigationItem"; title = "Dev Exam"; ObjectID = "Vta-cE-QFs"; */
+"Vta-cE-QFs.title" = "Dev Exam";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bwg-w8-eKX"; */
+"bwg-w8-eKX.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "icb-t3-cjk"; */
+"icb-t3-cjk.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pNu-2F-gAj"; */
+"pNu-2F-gAj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sdy-rk-rjD"; */
+"sdy-rk-rjD.text" = "Label";
