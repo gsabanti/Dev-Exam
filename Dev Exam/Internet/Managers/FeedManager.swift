@@ -17,6 +17,10 @@ class FeedManager
             let data = jsonResponse.arrayValue
             let elements = List<DataElement>()
             let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+                try? realm.commitWrite()
+            }
             for element in data
             {
                 try! realm.write() {
