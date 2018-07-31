@@ -13,6 +13,7 @@
 		B92D09712110A59D0037A85E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92D096F2110A59D0037A85E /* LaunchScreen.storyboard */; };
 		B92D09792110AB5F0037A85E /* API_Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D09782110AB5F0037A85E /* API_Wrapper.swift */; };
 		B92D097B2110AD060037A85E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D097A2110AD060037A85E /* AuthManager.swift */; };
+		B9832A9F2111245F00979910 /* LLSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9832A9E2111245F00979910 /* LLSpinner.swift */; };
 		B9D08B432110AF8800E6F051 /* GSAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D08B422110AF8800E6F051 /* GSAuthViewController.swift */; };
 		B9D08B452110AFBA00E6F051 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D08B442110AFBA00E6F051 /* Extensions.swift */; };
 		B9D08B472110BEEF00E6F051 /* InputMask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D08B462110BEEF00E6F051 /* InputMask.framework */; };
@@ -37,6 +38,7 @@
 		B92D09722110A59D0037A85E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92D09782110AB5F0037A85E /* API_Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Wrapper.swift; sourceTree = "<group>"; };
 		B92D097A2110AD060037A85E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		B9832A9E2111245F00979910 /* LLSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSpinner.swift; sourceTree = "<group>"; };
 		B9D08B422110AF8800E6F051 /* GSAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSAuthViewController.swift; sourceTree = "<group>"; };
 		B9D08B442110AFBA00E6F051 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B9D08B462110BEEF00E6F051 /* InputMask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InputMask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 		B9D08B622110EA1D00E6F051 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				B9832A9E2111245F00979910 /* LLSpinner.swift */,
 				B9D08B442110AFBA00E6F051 /* Extensions.swift */,
 				B9D08B582110E7BA00E6F051 /* Localizable.strings */,
 			);
@@ -311,6 +314,7 @@
 				B9D08B452110AFBA00E6F051 /* Extensions.swift in Sources */,
 				B9D08B4B2110CC2300E6F051 /* DataElement.swift in Sources */,
 				B9D08B492110CBDD00E6F051 /* GSFeedTableViewController.swift in Sources */,
+				B9832A9F2111245F00979910 /* LLSpinner.swift in Sources */,
 				B9D08B4D2110CE1400E6F051 /* FeedManager.swift in Sources */,
 				B92D097B2110AD060037A85E /* AuthManager.swift in Sources */,
 				B92D09672110A5990037A85E /* AppDelegate.swift in Sources */,

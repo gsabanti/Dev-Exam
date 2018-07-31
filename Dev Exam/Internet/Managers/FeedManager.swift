@@ -11,9 +11,9 @@ import RealmSwift
 import Realm
 class FeedManager
 {
-    class func getFeed(success:@escaping ((_ feed: List<DataElement>) -> ()), failure:@escaping ((_ errorMessage: String) -> ()))
+    class func getFeed(success:@escaping ((_ feed: List<DataElement>) -> ()), failure:@escaping ((_ errorMessage: String) -> ())) -> URLSessionDataTask?
     {
-        _ = API_Wrapper.getFeed(success: { (jsonResponse, urlResponse) in
+        let task = API_Wrapper.getFeed(success: { (jsonResponse, urlResponse) in
             let data = jsonResponse.arrayValue
             let elements = List<DataElement>()
             let realm = try! Realm()
@@ -50,5 +50,6 @@ class FeedManager
         }, failure: { 
             failure(NSLocalizedString("BASIC_FAILURE", comment: ""))
         })
+        return task
     }
 }

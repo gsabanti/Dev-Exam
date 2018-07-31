@@ -16,7 +16,8 @@ class GSFeedTableViewController: UITableViewController {
     let realm = try! Realm()
     var notificationToken: NotificationToken? = nil
     var timer: Timer?
-    var elements: Results<DataElement>
+    var currentDataTask: URLSessionDataTask?
+    private var _elements:Results<DataElement>
     {
         switch sorting {
         case .server:
@@ -26,6 +27,11 @@ class GSFeedTableViewController: UITableViewController {
             let data = realm.objects(DataElement.self).sorted(byKeyPath: "date")
             return data
         }
+
+    }
+    var elements: Array<DataElement>
+    {
+        return Array(self._elements)
     }
     
     override func viewDidLoad() {
@@ -36,7 +42,6 @@ class GSFeedTableViewController: UITableViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: { [weak self](timer) in
             self?.refresh()
         })
-        
     }
     
     func configureNavigationBar()
@@ -74,12 +79,15 @@ class GSFeedTableViewController: UITableViewController {
     
     func reloadData(completion:(()->())?)
     {
-        FeedManager.getFeed(success: { [weak self](elements) in
+        self.showLoader()
+        self.currentDataTask = FeedManager.getFeed(success: { (elements) in
             DispatchQueue.main.async {
+                LLSpinner.stop()
                 completion?()
             }
         }) { [weak self] (failureString) in
             DispatchQueue.main.async {
+                LLSpinner.stop()
                 self?.showFailureAlert(message: failureString)
                 completion?()
             }
@@ -104,7 +112,7 @@ class GSFeedTableViewController: UITableViewController {
     {
         DispatchQueue.main.async {
             self.notificationToken?.invalidate()
-            self.notificationToken = self.elements.observe { [weak self] (changes: RealmCollectionChange) in
+            self.notificationToken = self._elements.observe { [weak self] (changes: RealmCollectionChange) in
                 guard let tableView = self?.tableView else { return }
                 switch changes {
                 case .initial:
@@ -176,11 +184,19 @@ class GSFeedTableViewController: UITableViewController {
         return 140
     }
     
+    func showLoader()
+    {
+        LLSpinner.spin(style: .whiteLarge, backgroundColor: UIColor(white: 0, alpha: 0.2)) { 
+            self.currentDataTask?.cancel()
+        }
+    }
+
     deinit {
         self.timer?.invalidate()
         self.timer = nil
         self.notificationToken?.invalidate()
         self.notificationToken = nil
+        self.currentDataTask?.cancel()
     }
 }
 

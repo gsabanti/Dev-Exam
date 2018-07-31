@@ -17,7 +17,6 @@ class API_Wrapper: NSObject {
     //MARK:- Базовые функции
     private class func composeHTTPRequestWithParameters (parameters : [URLQueryItem]?, endpoint : String ) -> URLRequest?
     {
-        
         var urlComponents = URLComponents()
         urlComponents.scheme = "http"
         urlComponents.host = kBaseURL
@@ -25,13 +24,13 @@ class API_Wrapper: NSObject {
         urlComponents.queryItems = parameters
         guard let url = urlComponents.url else { return nil }
         print("formatter url string : \(url.absoluteString)")
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.timeoutInterval = 10.0
         return  request// Возвращаем объект запроса в интернет
     }
     
     class func genericCompletetionHandler ( data : Data? , response : URLResponse? , error : NSError? ,  success : ( _ jsonResponse : JSON, _ urlResponse:HTTPURLResponse) -> () , failure : ()-> ()  )
     {
-        
         if ( data != nil )
         {
             if let jsonResponse = try? JSON.init(data: data! as Data, options: JSONSerialization.ReadingOptions()) 
@@ -79,7 +78,7 @@ class API_Wrapper: NSObject {
     }
     
     class func getFeed (success : @escaping (_ jsonResponce : JSON, _ urlResponse:HTTPURLResponse) -> () , failure : @escaping ()-> ()) -> URLSessionDataTask?
-    {        
+    {
         guard let request = API_Wrapper.composeHTTPRequestWithParameters(parameters: nil, endpoint: "") else { return nil }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             API_Wrapper.genericCompletetionHandler(data : data, response: response, error: error as NSError?, success: success , failure: failure)

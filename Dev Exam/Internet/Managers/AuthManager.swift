@@ -58,9 +58,9 @@ class AuthManager
         }
     }
     
-    class func authorize(phone: String, password: String, success:@escaping (() -> ()), failure:@escaping ((_ errorMessage: String) -> ()))
+    class func authorize(phone: String, password: String, success:@escaping (() -> ()), failure:@escaping ((_ errorMessage: String) -> ())) -> URLSessionDataTask?
     {
-        _ = API_Wrapper.authorize(phone: phone, password: password, success: { (jsonResponse, urlResponse) in
+        let task = API_Wrapper.authorize(phone: phone, password: password, success: { (jsonResponse, urlResponse) in
             let code = urlResponse.statusCode
             switch code{
             case 200:
@@ -85,5 +85,6 @@ class AuthManager
         }, failure: { 
             failure(NSLocalizedString("BASIC_FAILURE", comment: ""))
         })
+        return task
     }
 }

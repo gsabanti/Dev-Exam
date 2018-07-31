@@ -15,6 +15,7 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollview: UIScrollView!
+    var currentDataTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,17 +63,32 @@ class GSAuthViewController: UIViewController, MaskedTextFieldDelegateListener {
     @IBAction func auth(sender: UIButton?)
     {
         guard !self.phoneTextField.text!.isEmpty && !self.passwordTextField.text!.isEmpty else { self.showFailureAlert(message: NSLocalizedString("MISSING_FIELDS", comment: "")); return }
-        AuthManager.authorize(phone: self.phoneTextField.text ?? "", password: self.passwordTextField.text ?? "", success: { 
+        self.showLoader()
+        self.currentDataTask = AuthManager.authorize(phone: self.phoneTextField.text ?? "", password: self.passwordTextField.text ?? "", success: { 
             DispatchQueue.main.async {
+                LLSpinner.stop()
                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "feed") as! GSFeedTableViewController
                 let navVC = UINavigationController(rootViewController: vc)
                 self.present(navVC, animated: true, completion: nil)
             }
         }) { (failureString) in
             DispatchQueue.main.async {
+                LLSpinner.stop()
                 self.showFailureAlert(message: failureString)
             }
         }
+        
+    }
+    
+    func showLoader()
+    {
+        LLSpinner.spin(style: .whiteLarge, backgroundColor: UIColor(white: 0, alpha: 0.2)) { 
+            self.currentDataTask?.cancel()
+        }
+    }
+    
+    deinit {
+        currentDataTask?.cancel()
     }
 }
 
